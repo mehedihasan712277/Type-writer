@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Poppins;
+        }
+        .con{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .txt1{
+            font-size: 25px;
+        }
+        #t2{
+            color: red;
+            font-size: 25px;
+            
+        }
+        .txt3{
+            font-size: 35px;
+            font-weight: bold;
+            font-family: Poppins;
+        }
+        .intro{
+            font-family: Nunito;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <p class="intro">Hi, there</p>
+    <div class="con">
+        <p class="txt1">I am</p><p class="space">&nbsp;</p><p id="t2"></p><p class="txt3">|</p>
+    </div>
+    <script>
+        let txt1, txt2, i, j, x, y, z;
+        txt1 = "Md Mehedi Hasan  ";
+        txt2 = "a Professional Web Designer and Developer  ";
+        i = 0;
+        j = 0;
+        z = txt1.length;
+        y = document.getElementById("t2");
+        
+        function myfunc() {
+            if (i < z) {
+                if (j%2 == 0) {
+                    y.innerHTML += txt1.charAt(i);
+                    i++;
+                    z = txt1.length
+                }
+                else{
+                    y.innerHTML += txt2.charAt(i);
+                    i++;
+                    z = txt2.length;
+                }
+            }
+            else{
+                y.innerHTML = "";
+                i = 0;
+                j++;
+            }
+
+            setTimeout(myfunc,100);
+        }
+        myfunc();
+    </script>
+</body>
+</html>

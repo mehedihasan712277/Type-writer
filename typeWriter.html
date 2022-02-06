@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Poppins;
+        }
+        .con{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <p id="id">I am a </p><p style="color: red; font-size: 25px;">|</p>
+    </div>
+    <script>
+        let txt = "I am a Professional Frelancer";
+        let txt1 = "I am a Web Designer and Developer";
+        let y = document.getElementById("id");
+        let i = 0;
+        let j = 0;
+        let a = txt.length;
+        function myfunc(){
+            if(i < a){
+                if(j%2 == 0){
+                    y.innerHTML += txt.charAt(i+7);
+                    i++;
+                    a = txt.length;
+                }
+                else{
+                    y.innerHTML += txt1.charAt(i + 7);
+                    i++;
+                    a = txt1.length;
+                }
+            }
+            else{
+                i = 0;
+                y.innerHTML = "I am a ";
+                j++;
+            }
+
+            setTimeout(myfunc,100);
+        }
+        myfunc();
+    </script>
+</body>
+</html>
